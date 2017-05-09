@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/editResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:onClick="apreteUno"
+            android:text="@string/uno"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dos"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="104dp" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tres"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="192dp" />
+
+        <Button
+            android:id="@+id/buttonSuma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/suma"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="280dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cuatro"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="1dp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cinco"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="104dp" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/seis"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="192dp" />
+
+        <Button
+            android:id="@+id/buttonResta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resta"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="280dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/siete"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="1dp" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ocho"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="104dp" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nueve"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="192dp" />
+
+        <Button
+            android:id="@+id/buttonDiv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/division"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="280dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonDot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/punto"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="1dp" />
+
+        <Button
+            android:id="@+id/button0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cero"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="104dp" />
+
+        <Button
+            android:id="@+id/buttonEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/equal"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="192dp" />
+
+        <Button
+            android:id="@+id/buttonMult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/multiplicacion"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="280dp" />
+    </LinearLayout>
+</LinearLayout>
