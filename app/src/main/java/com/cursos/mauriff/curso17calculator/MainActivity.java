@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.mariuszgromada.math.mxparser.Expression;
+import org.mariuszgromada.math.mxparser.mXparser;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -46,15 +49,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText editText = (EditText) findViewById(R.id.editResultado) ;
-                StringBuilder contenido = new StringBuilder(editText.getText());
-                String valores[] = contenido.toString().split("\\+");
-                Integer resultado=0;
-                for(int i = 0; i < valores.length; i++){
-
-                    resultado = resultado +Integer.valueOf(valores[i]);
-                }
-                editText.setText(resultado.toString());
-
+                Expression e = new Expression(editText.getText().toString());
+                editText.setText(String.valueOf(e.calculate()));
             }
         };
 
