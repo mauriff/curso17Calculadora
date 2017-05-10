@@ -13,7 +13,12 @@
     <string name="suma">+</string>
     <string name="resta">-</string>
     <string name="division">/</string>
-    <string name="multiplicacion">X</string>
+    <string name="multiplicacion">*</string>
     <string name="equal">=</string>
     <string name="punto">.</string>
+    <string name="clean">CE</string>
+    <string name="exit">Salir</string>
+    <string name="are_sure">Esta seguro de salir?</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
 </resources>

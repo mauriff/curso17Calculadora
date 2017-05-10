@@ -1,10 +1,16 @@
 package com.cursos.mauriff.curso17calculator;
 
+import android.content.DialogInterface;
+import android.os.Build;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import org.mariuszgromada.math.mxparser.Expression;
 import org.mariuszgromada.math.mxparser.mXparser;
@@ -33,27 +39,62 @@ public class MainActivity extends AppCompatActivity {
         Button botonMultiplicacion = (Button) findViewById(R.id.buttonMult);
         Button botonPunto = (Button) findViewById(R.id.buttonDot);
         Button botonIgual = (Button) findViewById(R.id.buttonEqual);
+        Button botonClean= (Button) findViewById(R.id.buttonLimpiar);
+        Button botonExit= (Button) findViewById(R.id.buttonExit);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Button botonPresionado = (Button)v;
-                EditText editText = (EditText) findViewById(R.id.editResultado) ;
+                TextView editText = (TextView) findViewById(R.id.editResultado) ;
                 StringBuilder contenido = new StringBuilder(editText.getText());
                 contenido.append(botonPresionado.getText());
                 editText.setText(contenido.toString() );
             }
         };
 
+        View.OnClickListener cleanListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView editText = (TextView) findViewById(R.id.editResultado) ;
+                editText.setText("");
+            }
+        };
+
         View.OnClickListener listenerIgual = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText editText = (EditText) findViewById(R.id.editResultado) ;
+                TextView editText = (TextView) findViewById(R.id.editResultado) ;
                 Expression e = new Expression(editText.getText().toString());
                 editText.setText(String.valueOf(e.calculate()));
             }
         };
 
+        View.OnClickListener listenerExit = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage(R.string.are_sure)
+                        .setCancelable(false)
+                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                MainActivity.this.finish();
+                            }
+                        })
+                        .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.show();
+
+
+            }
+        };
+        botonExit.setOnClickListener(listenerExit);
+
+        botonClean.setOnClickListener(cleanListener);
         botonCero.setOnClickListener(listener);
         botonUno.setOnClickListener(listener);
         botonDos.setOnClickListener(listener);
@@ -72,7 +113,15 @@ public class MainActivity extends AppCompatActivity {
         botonIgual.setOnClickListener(listenerIgual);
 
 
+
+
+
+
+
     }
+
+
+
 
 
 }
